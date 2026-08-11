@@ -13,6 +13,13 @@ app.use(cors('*'));
 
 app.use(logRequest);
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Advanced Express API is running"
+    });
+});
+
 app.use('/api', ArticleRoute);
 app.use('/api/users', UserRoutes);
 
